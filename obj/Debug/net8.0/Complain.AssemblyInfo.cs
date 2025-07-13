@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Complain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8af2723887e94c2f974b2488109dae4374bfc9bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Complain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Complain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

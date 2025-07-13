@@ -20,3 +20,141 @@ html {
 body {
   margin-bottom: 60px;
 }
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Landing page full screen */
+.landing-page {
+  position: relative; /* so overlay absolute works */
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../img/bbg.png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 56px; /* if navbar is fixed */
+ 
+}
+
+
+/* transparent navbar */
+.transparent-navbar {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+.overlay {
+  position: absolute;
+  top: 56px; /* below navbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  padding: 20px;
+}
+
+
+/* Footer stays at bottom of landing page */
+.footer-overlay {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.text-center {
+    color: white;
+    padding: 20px;
+}
+/* Background behind cards */
+.how-it-works-section {
+    background-color: #1a1a2e;
+   
+    color: #fff;
+    padding: 60px 0;
+}
+
+.glowing-title {
+  font-size: 2.5rem;
+  color: white; /* text color white */
+  text-shadow: 
+    0 0 5px #bb86fc,   /* purple glow */
+    0 0 10px #bb86fc,
+    0 0 20px #bb86fc,
+    0 0 30px #7f39fb,
+    0 0 40px #7f39fb;
+}
+
+
+
+/* Step card styling */
+.step-card {
+    background-color: #2d2d44;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.step-desc {
+    font-size: 1rem;
+}
+
+/* LED Border Animation */
+.led-border {
+    border: 2px solid transparent;
+    position: relative;
+}
+.led-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #bb86fc, #6200ee, #bb86fc, #3700b3);
+    background-size: 400% 400%;
+    border-radius: 15px;
+    z-index: -1;
+    animation: ledWalk 6s linear infinite;
+}
+
+@keyframes ledWalk {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.white-glow {
+  color: white;
+  text-shadow:
+    0 0 5px white,
+    0 0 10px white,
+    0 0 20px white,
+    0 0 30px white;
+}
+

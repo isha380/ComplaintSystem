@@ -1,8 +1,72 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_LandingLayout.cshtml";
+}
+<style>
+    .landing-page .text-center{
+        margin-bottom: 200px;
+    }
+    .btn-purple {
+    background-color: darkviolet;
+    color: white;
+    border: none;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+.btn-purple:hover {
+    background-color:  rebeccapurple; /* optional hover effect */
+    color: white;
+}
+
+</style>
+
+<!-- First Fullscreen Landing Section -->
+<div class="landing-page">
+    <div class="overlay">
+        <div class="text-center text-white" itemid="main-txt">
+            <P style="font-size: 60px;">Welcome to ComplainEase</p>
+            <p style="font-size: 30px;">Your Voice. Our Action.</p>
+            <a href="/Login/Login" class="btn btn-purple">Submit Complaint</a>
+
+        </div>
+    </div>
+
+   
+    
 </div>
+
+<!-- Second Section: Scrolls below -->
+<section class="how-it-works-section">
+    <div class="container py-5">
+        <h2 class="text-center mb-5 glowing-title">How It Works</h2>
+        <div class="row g-4 justify-content-center">
+            <!-- Step 1 -->
+            <div class="col-md-3">
+                <div class="step-card led-border">
+                    <div class="step-title">Step 1</div>
+                    <div class="step-desc">Login or register to get started with your complaint.</div>
+                </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="col-md-3">
+                <div class="step-card led-border">
+                    <div class="step-title">Step 2</div>
+                    <div class="step-desc">Submit your complaint with details and category.</div>
+                </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="col-md-3">
+                <div class="step-card led-border">
+                    <div class="step-title">Step 3</div>
+                    <div class="step-desc">Track your complaint status and updates.</div>
+                </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="col-md-3">
+                <div class="step-card led-border">
+                    <div class="step-title">Step 4</div>
+                    <div class="step-desc">Get notified when your complaint is resolved.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

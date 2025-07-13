@@ -1,18 +1,123 @@
 @model LoginModel
-<h2>Register</h2>
 
-<form asp-action="Register" method="post">
+@{
+    Layout = "~/Views/Shared/_LandingLayout.cshtml";
+}
+
+<style>
+   
+
+    .form-wrapper {
+        min-height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .form-container {
+        background: rgba(30, 20, 50, 0.75);
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(128, 0, 128, 0.7);
+        width: 100%;
+        max-width: 400px;
+        color: white;
+    }
+
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: white;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 1rem;
+    }
+
+    .form-control::placeholder {
+        color: #ccc;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 12px;
+        background-color: rebeccapurple;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-weight: 700;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: indigo;
+    }
+
+    .message {
+        text-align: center;
+        color: #ff6b6b;
+        margin-top: 10px;
+    }
+
+    .links {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .links a {
+        color: #b19cd9;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .links a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+</style>
+
+<div class="form-wrapper">
+  <form asp-action="Register" method="post" class="form-container" novalidate>
+    <h2>Register</h2>
+
     <div>
-        <label>Email</label>
-        <input asp-for="Email" />
+      <label>Name</label>
+      <input name="Name" class="form-control" placeholder="Enter your name" />
     </div>
+
     <div>
-        <label>Password</label>
-        <input asp-for="Password" type="password" />
+      <label asp-for="Email">Email</label>
+      <input asp-for="Email" class="form-control" placeholder="Enter your email" />
     </div>
-    <button type="submit">Register</button>
-</form>
 
-<p style="color:red">@ViewBag.Message</p>
+    <div>
+      <label asp-for="Password">Password</label>
+      <input asp-for="Password" type="password" class="form-control" placeholder="Enter your password" />
+    </div>
 
-<a asp-action="Login">Back to Login</a>
+    <button type="submit" class="btn btn-primary">Register</button>
+
+    <p class="message">@ViewBag.Message</p>
+
+    <div class="links">
+      <a asp-action="Login">Back to Login</a>
+    </div>
+  </form>
+</div>

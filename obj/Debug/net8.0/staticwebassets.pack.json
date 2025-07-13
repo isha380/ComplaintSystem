@@ -5,12 +5,24 @@
       "PackagePath": "staticwebassets\\Complain.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Dell\\Desktop\\Complain\\wwwroot\\css\\auth.css",
+      "PackagePath": "staticwebassets\\css\\auth.css"
+    },
+    {
       "Id": "C:\\Users\\Dell\\Desktop\\Complain\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\Dell\\Desktop\\Complain\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\Complain\\wwwroot\\img\\bbg.png",
+      "PackagePath": "staticwebassets\\img\\bbg.png"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\Complain\\wwwroot\\img\\bg.png",
+      "PackagePath": "staticwebassets\\img\\bg.png"
     },
     {
       "Id": "C:\\Users\\Dell\\Desktop\\Complain\\wwwroot\\js\\site.js",

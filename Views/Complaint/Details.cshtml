@@ -1,37 +1,69 @@
-@model Complain.Models.Complaint
+@model Complain.Models.Complaint  
 
 @{
     ViewData["Title"] = "Complaint Details";
+    Layout = "~/Views/Shared/_LandingLayout.cshtml";
 }
 
-<h2>Complaint Details</h2>
+<style>
+    .white-text,
+    .white-text dt,
+    .white-text dd,
+    .white-text h2,
+    .white-text a.btn {
+        color: white !important;
+    }
+.white-text {
+    margin-top: 65px; /* pushes the whole content down */
+}
+    .white-text .card {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 1px solid white;
+    }
 
-<div class="card p-3">
-    <dl class="row">
-        <dt class="col-sm-3">Name:</dt>
-        <dd class="col-sm-9">@Model.Name</dd>
+    .white-text a.btn-secondary {
+        background-color: transparent;
+        border-color: white;
+        color: white;
+    }
 
-        <dt class="col-sm-3">Email:</dt>
-        <dd class="col-sm-9">@Model.Email</dd>
+    .white-text a.btn-secondary:hover {
+        background-color: white;
+        color: black;
+        border-color: white;
+    }
+</style>
 
-        <dt class="col-sm-3">Phone:</dt>
-        <dd class="col-sm-9">@Model.Phone</dd>
+<div class="white-text">
+    <h2 style="text-align: center;">Complaint Details</h2> 
 
-        <dt class="col-sm-3">Title:</dt>
-        <dd class="col-sm-9">@Model.Title</dd>
+    <div class="card p-3">
+        <dl class="row">
+            <dt class="col-sm-3">Name:</dt>
+            <dd class="col-sm-9">@Model.Name</dd>
 
-        <dt class="col-sm-3">Description:</dt>
-        <dd class="col-sm-9">@Model.Description</dd>
+            <dt class="col-sm-3">Email:</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
 
-        <dt class="col-sm-3">Category:</dt>
-        <dd class="col-sm-9">@Model.Category</dd>
+            <dt class="col-sm-3">Phone:</dt>
+            <dd class="col-sm-9">@Model.Phone</dd>
 
-        <dt class="col-sm-3">Status:</dt>
-        <dd class="col-sm-9">@Model.Status</dd>
+            <dt class="col-sm-3">Title:</dt>
+            <dd class="col-sm-9">@Model.Title</dd>
 
-        <dt class="col-sm-3">Date:</dt>
-        <dd class="col-sm-9">@Model.DateCreated.ToShortDateString()</dd>
-    </dl>
+            <dt class="col-sm-3">Description:</dt>
+            <dd class="col-sm-9">@Model.Description</dd>
+
+            <dt class="col-sm-3">Category:</dt>
+            <dd class="col-sm-9">@Model.Category</dd>
+
+            <dt class="col-sm-3">Status:</dt>
+            <dd class="col-sm-9">@Model.Status</dd>
+
+            <dt class="col-sm-3">Date:</dt>
+            <dd class="col-sm-9">@Model.DateCreated.ToShortDateString()</dd>
+        </dl>
+    </div>
+
+    <a asp-action="Index" class="btn btn-secondary mt-3">Back</a>
 </div>
-
-<a asp-action="Index" class="btn btn-secondary mt-3">Back</a>

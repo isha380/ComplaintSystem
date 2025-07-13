@@ -2,11 +2,44 @@
 
 @{
     ViewData["Title"] = "Edit Complaint";
+    Layout = "~/Views/Shared/_LandingLayout.cshtml";
 }
 @{
     var role = Context.Session.GetString("UserRole");
 }
-<h2>Edit Complaint</h2>
+<style>
+    .white-text label {
+        color: white !important;
+    }
+
+    .white-text h2 {
+        color: white !important;
+    }
+.white-text {
+        margin-top: 70px; 
+    }
+    .white-text .form-control {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white !important;
+        border: 1px solid white;
+    }
+
+    .white-text .form-control::placeholder {
+        color: #ccc;
+    }
+
+    .white-text .form-control:focus {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+
+    .white-text option {
+        color: black;
+    }
+</style>
+
+<div class="white-text">
+<h2 style="text-align: center;">Edit Complaint</h2>
 
 <form asp-action="Edit" method="post">
     <input type="hidden" asp-for="Id" />
@@ -68,6 +101,7 @@
         <a asp-action="Index" class="btn btn-secondary">Cancel</a>
     </div>
 </form>
+</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

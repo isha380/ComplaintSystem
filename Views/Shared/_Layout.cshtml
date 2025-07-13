@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="~/Complain.styles.css" asp-append-version="true" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="land-page">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Complaint</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Compvkccflaint</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -30,11 +30,11 @@
                            @if (Context.Session.GetString("UserEmail") != null)
                           {
                               <p>Welcome @Context.Session.GetString("UserEmail")</p>
-                              <a asp-controller="Login" asp-action="Logout">Logout</a>
+                              <a class="nav-link text-dark" asp-controller="Login" asp-action="Logout">Logout</a>
                         }
                             else
                             {
-                                <a asp-controller="Login" asp-action="Login">Login</a>
+                                <a class="nav-link text-dark" asp-controller="Login" asp-action="Login">Login</a>
                             }
 
                            
@@ -44,32 +44,13 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
+  
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Complaint Management system - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    @if (TempData["Success"] != null)
-{
-    <div class="alert alert-success alert-dismissible fade show m-2" role="alert">
-        @TempData["Success"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-}
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger alert-dismissible fade show m-2" role="alert">
-        @TempData["Error"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-}
-
+  
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

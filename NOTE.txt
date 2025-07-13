@@ -1,0 +1,9 @@
+For users:
+1.delete the name and email from table 
+2.action heading in table couldnt show it resolve 
+
+Admin:
+edit part: resolve viewing part 
+
+Landing
+1. resolve the title margin

@@ -3,11 +3,40 @@
 
 @{
     ViewData["Title"] = "Complaints List";
+     Layout = "~/Views/Shared/_LandingLayout.cshtml";
 }
 
 @{
     var role = Context?.Session?.GetString("UserRole") ?? "";
 }
+<style>
+    .white-text, .white-text * {
+        color: white !important;
+    }
+
+    .white-text .form-control,
+    .white-text select,
+    .white-text textarea {
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid white;
+        color: white !important;
+    }
+
+    .white-text .form-control:focus {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: white !important;
+    }
+
+    .white-text .table th,
+    .white-text .table td {
+        color: white !important;
+        background-color: transparent;
+    }
+
+    .white-text .btn {
+        color: white;
+    }
+</style>
 
 <h2>All Complaints</h2>
 
@@ -27,6 +56,7 @@
 }
 
 <a asp-action="Create" class="btn btn-primary mb-3">+ New Complaint</a>
+<div class="white-text">
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -60,3 +90,4 @@
         }
     </tbody>
 </table>
+</div>

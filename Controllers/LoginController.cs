@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using UserApp.Data;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
+using Complain.Models;
+
 
 public class LoginController : Controller
 {
@@ -30,7 +32,7 @@ public class LoginController : Controller
         // Set session variables
         HttpContext.Session.SetString("UserEmail", user.Email);
         HttpContext.Session.SetString("UserRole", user.Role);
-          
+
         HttpContext.Session.SetInt32("UserId", user.Id); // For filtering complaints
 
         // Redirect based on role
@@ -59,11 +61,77 @@ public class LoginController : Controller
     }
 
     // ---------- FORGOT PASSWORD ----------
-    public IActionResult ForgotPassword() => View();
-    public IActionResult Logout()
+
+
+
+
+    [HttpGet]
+    public IActionResult ForgotPassword()
     {
-        HttpContext.Session.Clear(); // Clear all session data
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult ForgotPassword(ForgotPasswordViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+
+        // Simulate: Generate a dummy token (you can make it secure later)
+        string token = Guid.NewGuid().ToString();
+        string resetLink = Url.Action("ResetPassword", "Login",
+            new { email = model.Email, token = token }, Request.Scheme);
+
+        // Just display the link (in real use, send via email)
+        TempData["Success"] = resetLink;
+
+        return View();
+    }
+
+    [HttpGet]
+    public IActionResult ResetPassword(string email, string token)
+    {
+        var model = new ResetPasswordViewModel
+        {
+            Email = email,
+            Token = token
+        };
+        return View(model);
+    }
+
+    [HttpPost]
+    public IActionResult ResetPassword(ResetPasswordViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+
+        // Update password in your user table
+        var user = _context.Users.FirstOrDefault(u => u.Email == model.Email);
+        if (user == null)
+        {
+            TempData["Error"] = "User not found";
+            return View();
+        }
+
+        user.Password = model.NewPassword; // You can hash this for real apps
+        _context.SaveChanges();
+
+        TempData["Success"] = "Password has been reset successfully!";
         return RedirectToAction("Login");
     }
+
+      public IActionResult Logout()
+    {
+        // Clear session
+        HttpContext.Session.Clear();
+
+        // Optionally, redirect to landing page
+        return RedirectToAction("Index", "Home"); // Or "Landing", if you use Landing as your homepage
+    }
+
 
 }

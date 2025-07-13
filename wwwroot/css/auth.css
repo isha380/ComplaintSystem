@@ -1,0 +1,107 @@
+/* wwwroot/css/auth.css */
+
+.form-wrapper {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.form-container {
+  background: rgba(30, 20, 50, 0.75);
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.7);
+  width: 100%;
+  max-width: 400px;
+  color: white;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+input.form-control::placeholder {
+  color: #ddd;
+}
+
+button.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: rebeccapurple;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+  background-color: indigo;
+}
+.btn-link {
+    color: #b19cd9;
+    font-weight: 600;
+    margin-top: 15px;
+    display: inline-block;
+  }
+
+  .btn-link:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  .alert-success {
+    background-color: #2f4f4f99;
+    color: #d4edda;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+  }
+
+.text-danger {
+  color: #ff6b6b;
+}
+.message {
+  color: #ff6b6b;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.links a {
+  color: #b19cd9;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.links a:hover {
+  color: white;
+  text-decoration: underline;
+}
